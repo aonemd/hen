@@ -33,8 +33,8 @@
                     (conc (car e) (car (cdr e)) " "))
                    lst)))
 
- (define uptime-display (conc "uptime: " (uptime-list->string (uptime-list))))
- uptime-display)
+ (define display* (conc "uptime: " (uptime-list->string (uptime-list))))
+ display*)
 
 (define (accumulate proc initial sequence)
  (if (null? sequence)
