@@ -6,6 +6,8 @@
  (display (user-host))
  (newline)
  (display (uptime))
+ (newline)
+ (display (kernel))
  (newline))
 
 (define (user-host)
@@ -35,6 +37,15 @@
 
  (define display* (conc "uptime: " (uptime-list->string (uptime-list))))
  display*)
+
+(define (kernel)
+ (define (kernel-info)
+  (_string-strip (capture "uname -r")))
+
+ (define (display*)
+  (conc "kernel: " (kernel-info)))
+
+ (display*))
 
 (define (accumulate proc initial sequence)
  (if (null? sequence)
