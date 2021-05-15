@@ -3,16 +3,22 @@
 (import shell)
 
 (define (main)
- (display (conc (user) "@" (host)))
+ (display (user-host))
  (newline)
  (display (uptime))
  (newline))
 
-(define (host)
- (_string-strip (capture "hostname")))
+(define (user-host)
+ (define (host)
+  (_string-strip (capture "hostname")))
 
-(define (user)
- (_string-strip (capture "echo $USER")))
+ (define (user)
+  (_string-strip (capture "echo $USER")))
+
+ (define (display*)
+  (conc (user) "@" (host)))
+
+ (display*))
 
 (define (uptime)
  (define (uptime-list)
