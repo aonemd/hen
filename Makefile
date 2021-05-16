@@ -1,11 +1,13 @@
 SOURCE_NAME = hen.scm
-BUILD_NAME = hen
+BUILD_PATH = hen
 
 default: clean build run
 
 build:
 	chicken-csc $(SOURCE_NAME)
 run:
-	./$(BUILD_NAME)
+	./$(BUILD_PATH)
+install:
+	cp $(BUILD_PATH) /usr/local/bin
 clean:
-	rm -f $(BUILD_NAME)
+	rm -f $(BUILD_PATH)
