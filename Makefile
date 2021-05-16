@@ -1,5 +1,5 @@
-SOURCE_NAME = fitch.scm
-BUILD_NAME = fitch
+SOURCE_NAME = hen.scm
+BUILD_NAME = hen
 
 default: clean build run
 
